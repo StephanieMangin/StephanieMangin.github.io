@@ -1,1 +1,56 @@
-"Hello World" 
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Draw Diamonds</title>
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="table">
+        <div class="th">
+            <div class="td">
+                <p>Draw a Diamond</p>
+            </div>
+        </div>
+        <div class="tr">
+            <div class="td">
+                <p>Letter:</p>
+            </div>
+            <div class="td">
+                <input autofocus name="letter" id="letter"
+                       placeholder="" type="text"
+                       pattern="[B-Zb-z]{1}"
+                       maxlength="1" onblur="validateField()" />
+                <br />
+                <span id="validationError"></span>
+            </div>
+        </div>
+        <div class="tr"><div class="td">&nbsp;</div></div>
+        <div class="tr">
+            <div class="td">
+                <button disabled id="btnDrawDiamond" type="button" onclick="clkDrawDiamond();">
+                    Draw Diamond
+                </button>
+                <button disabled id="btnClearDiamond" type="button" onclick="clkClearDiamond();">
+                    Clear Diamond
+                </button>
+            </div>
+        </div>
+        <div class="tr"><div class="td">&nbsp;</div></div>
+    </div>
+    <p>
+        <div id="diamond" [innerHTML]=""></div>
+    </p>
+
+    <p>
+        <h2>Samples</h2>
+        <h3>C</h3>
+        <script type="text/javascript">document.write(drawDiamond("C"));</script>
+        <h3>h</h3>
+        <script type="text/javascript">document.write(drawDiamond("h"));</script>
+        <h3>Q</h3>
+        <script type="text/javascript">document.write(drawDiamond("Q"));</script>
+    </p>
+</body>
+</html>
